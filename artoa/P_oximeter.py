@@ -16,7 +16,7 @@ def draw_oximeter(stdscr):
     while True:
         stdscr.clear()
         # Get the current CPU usage
-        cpu_usage = psutil.cpu_percent #(interval=1)
+        cpu_usage = psutil.cpu_percent() #(interval=1)
         ram = psutil.virtual_memory().percent
         net = psutil.net_io_counters()
 
@@ -34,7 +34,7 @@ def draw_oximeter(stdscr):
             bar="█" * filled + "░" * (
                 bar_length - filled)  
             stdscr.addstr(y, 2, f"{label}: [{(bar
-               )}] {value:.1f}%", get_color(value))
+               )}] {value:.2f}%", get_color(value))
             
         stdscr.addstr(1, 2, "🖥 Live System Monitor",
                              curses.color_pair(1))
