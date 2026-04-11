@@ -16,7 +16,7 @@ if __name__ == "__main__":
     singles = [slow_square(n) for n in numbers]
     print(f"Seq: {time.perf_counter() - start:.2f}s")
 
-    print (f"Coers: {cpu_count()}")
+    print (f"Cores: {cpu_count()}")
 
     start = time.perf_counter()
     with Pool() as pool:
