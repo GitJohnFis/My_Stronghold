@@ -1,5 +1,6 @@
 
 import time
+from multiprocessing import Pool, cpu_count
 
 def slow_square(n):
     total = 0
