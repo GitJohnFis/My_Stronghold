@@ -10,10 +10,10 @@ def slow_square(n):
 
 if __name__ == "__main__":
 
-    numbers = list(range(14))
+    numbers = list(range(14)) #14 is the max number of processes on my machine, so I can see the difference between sequential and parallel execution
 
     start = time.perf_counter()
-    singles = [slow_square(n) for n in numbers]
+    single = [slow_square(n) for n in numbers]
     print(f"Seq: {time.perf_counter() - start:.2f}s")
 
     print (f"Cores: {cpu_count()}")
