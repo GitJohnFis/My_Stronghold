@@ -1,3 +1,4 @@
+
 import time
 
 def slow_square(n):
@@ -13,3 +14,10 @@ if __name__ == "__main__":
     start = time.perf_counter()
     singles = [slow_square(n) for n in numbers]
     print(f"Seq: {time.perf_counter() - start:.2f}s")
+
+    print (f"Coers: {cpu_count()}")
+
+    start = time.perf_counter()
+    with Pool() as pool:
+        multi = pool.map(slow_square, numbers)
+    print(f"Par: {time.perf_counter() - start:.2f}s")
